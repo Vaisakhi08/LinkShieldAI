@@ -1,0 +1,472 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080d1b;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+header {
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1e293b;
+    background: #0b1224;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #60a5fa;
+}
+
+header p {
+    color: #a5b4fc;
+    font-size: 14px;
+}
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.hero {
+    text-align: center;
+    padding: 75px 15px 55px;
+}
+
+.shield-icon {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 42px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #60a5fa;
+}
+
+.description {
+    color: #a8b3c7;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 35px;
+}
+
+.url-box {
+    display: flex;
+    max-width: 720px;
+    margin: auto;
+    padding: 8px;
+    gap: 10px;
+    background: #111b30;
+    border: 1px solid #334155;
+    border-radius: 12px;
+}
+
+.url-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    background: transparent;
+    font-size: 15px;
+}
+
+.url-box input::placeholder {
+    color: #8492a8;
+}
+
+.url-box button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #3b82f6;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.url-box button:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.url-box button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.privacy-note {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-top: 18px;
+}
+
+.result {
+    display: none;
+    max-width: 720px;
+    margin: 25px auto 0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.result.safe {
+    display: block;
+    background: #102b25;
+    border: 1px solid #10b981;
+    color: #a7f3d0;
+}
+
+.result.danger {
+    display: block;
+    background: #351b25;
+    border: 1px solid #f87171;
+    color: #fecaca;
+}
+
+.result.warning {
+    display: block;
+    background: #332817;
+    border: 1px solid #fbbf24;
+    color: #fde68a;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 10px 0 35px;
+}
+
+.feature-card {
+    background: #111b30;
+    padding: 28px 22px;
+    border: 1px solid #25334c;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #60a5fa;
+}
+
+.feature-card h3 {
+    color: #93c5fd;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.feature-card p {
+    color: #a8b3c7;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.disclaimer {
+    text-align: center;
+    color: #8492a8;
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 25px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 22px;
+    background: #0b1224;
+    color: #8492a8;
+    border-top: 1px solid #1e293b;
+    font-size: 13px;
+}
+
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .hero {
+        padding-top: 50px;
+    }
+
+    .url-box {
+        flex-direction: column;
+    }
+
+    .url-box button {
+        width: 100%;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+/* Clean and aligned scan results */
+#result {
+    text-align: left;
+    padding: 22px;
+    margin: 25px auto;
+    border-radius: 12px;
+    line-height: 1.7;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Result headings */
+#result h3 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+#result h4 {
+    text-align: left;
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+/* Risk analysis list */
+#result ul {
+    padding-left: 24px;
+    margin-top: 8px;
+}
+
+#result li {
+    margin-bottom: 7px;
+}
+
+/* Low risk - Green box */
+#result.safe {
+    background-color: #e8f8ee;
+    color: #166534;
+    border: 1px solid #86efac;
+    border-left: 6px solid #22c55e;
+}
+
+/* High risk - Red box */
+#result.danger {
+    background-color: #feecec;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+    border-left: 6px solid #ef4444;
+}
+
+/* Medium risk / Caution - Orange box */
+#result.warning {
+    background-color: #fff7e6;
+    color: #92400e;
+    border: 1px solid #fcd34d;
+    border-left: 6px solid #f59e0b;
+}
+
+/* Make results comfortable to read on mobile */
+@media (max-width: 600px) {
+    #result {
+        padding: 16px;
+        margin-top: 18px;
+    }
+
+    #result h3 {
+        font-size: 19px;
+    }
+}
+.history-section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+}
+
+.history-section h2 {
+    margin-top: 0;
+}
+
+.history-description {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.history-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.history-table th,
+.history-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    overflow-wrap: anywhere;
+}
+
+.history-table th {
+    background: #f1f4ff;
+}
+
+.history-high {
+    color: #d62828;
+    font-weight: bold;
+}
+
+.history-low {
+    color: #16803c;
+    font-weight: bold;
+}
+
+.history-section button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #243b80;
+    color: white;
+    cursor: pointer;
+}
+
+.history-section button:hover {
+    background: #17295d;
+}
+/* Scan History - Improve text visibility */
+
+.history-section {
+    background-color: #ffffff !important;
+    color: #172033 !important;
+}
+
+.history-section h2 {
+    color: #172033 !important;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.history-description {
+    color: #4b5563 !important;
+}
+
+.history-table {
+    background-color: #ffffff !important;
+    color: #172033 !important;
+}
+
+.history-table th {
+    background-color: #e5eaff !important;
+    color: #172033 !important;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.history-table td {
+    background-color: #ffffff !important;
+    color: #172033 !important;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid #d1d5db !important;
+}
+
+.history-table td.history-high {
+    color: #c62828 !important;
+    font-weight: 700;
+}
+
+.history-table td.history-low {
+    color: #16803c !important;
+    font-weight: 700;
+}
+
+.history-table td.history-medium {
+    color: #b45309 !important;
+    font-weight: 700;
+}
+
+.history-section button {
+    color: #ffffff !important;
+    background-color: #243b80 !important;
+    font-weight: 600;
+}
+
+/* Keep long URLs readable */
+.history-table td:first-child {
+    min-width: 220px;
+    overflow-wrap: anywhere;
+}
+
+.history-table-container {
+    overflow-x: auto;
+}
+
+/* Keep scan result visible after scanning */
+
+#result.safe,
+#result.danger,
+#result.warning {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    max-height: none !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+/* FIX: Prevent scan result from disappearing */
+
+#result {
+    display: block !important;
+    position: relative !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+#result.safe,
+#result.danger,
+#result.warning {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    max-height: none !important;
+    animation: none !important;
+    transition: none !important;
+}
+

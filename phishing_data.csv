@@ -1,0 +1,17 @@
+url,label
+https://www.google.com,0
+https://www.wikipedia.org,0
+https://www.microsoft.com,0
+https://www.github.com,0
+https://www.amazon.com,0
+https://www.python.org,0
+https://www.openai.com,0
+https://www.apple.com,0
+http://secure-login-example.invalid/verify,1
+http://account-update-example.invalid/login,1
+http://banking-verify-example.invalid/password,1
+http://free-gift-example.invalid/claim,1
+http://192.0.2.1/login,1
+http://verify-account-example.invalid/signin,1
+http://password-reset-example.invalid/secure,1
+http://login-update-example.invalid/banking,1

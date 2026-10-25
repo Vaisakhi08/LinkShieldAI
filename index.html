@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkShield AI | Phishing URL Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">🛡️ LinkShield AI</div>
+        <p>Smart Protection Against Phishing Links</p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="shield-icon">🔐</div>
+
+            <h1>Stay Safe from <span>Phishing Attacks</span></h1>
+
+            <p class="description">
+                Check suspicious URLs with LinkShield AI.
+                Analyse a link before you click it.
+            </p>
+
+            <div class="url-box">
+                <input
+                    type="url"
+                    id="urlInput"
+                    placeholder="Enter a URL (e.g. https://example.com)"
+                >
+
+                <button id="scanButton" onclick="checkURL()">
+                    Scan URL
+                </button>
+            </div>
+
+            <p class="privacy-note">
+                🔒 Your safety starts with one simple check.
+            </p>
+
+            <div id="result" class="result" aria-live="polite"></div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>🔍 URL Analysis</h3>
+                <p>Check URLs for suspicious patterns.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>⚡ Quick Scan</h3>
+                <p>Get an initial assessment in seconds.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🛡️ Safer Browsing</h3>
+                <p>Learn to identify potentially dangerous links.</p>
+            </div>
+        </section>
+        <section class="history-section">
+    <h2>📋 Scan History</h2>
+    <p class="history-description">
+        View your previously scanned URLs and their risk levels.
+    </p>
+
+    <div class="history-table-container">
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Status</th>
+                    <th>Risk</th>
+                    <th>Score</th>
+                    <th>Date & Time</th>
+                </tr>
+            </thead>
+            <tbody id="historyBody">
+                <tr>
+                    <td colspan="5">Loading scan history...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="button" onclick="loadScanHistory()">
+        Refresh History
+    </button>
+</section>
+
+<button type="button" onclick="clearScanHistory()">
+    🗑️ Clear Scan History
+</button>
+
+
+        <p class="disclaimer">
+            Note: This prototype provides an initial URL assessment.
+            It cannot guarantee that a website is safe.
+        </p>
+    </main>
+
+    <footer>
+        <p>© 2026 LinkShield AI | Stay Alert. Stay Protected.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
